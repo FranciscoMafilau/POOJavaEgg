@@ -1,11 +1,7 @@
-
 package ejercicio3extras;
 
+import java.util.Scanner;
 import juego.Juego;
-
-
-
-
 
 public class Ejercicio3Extras {
 
@@ -17,13 +13,17 @@ public class Ejercicio3Extras {
     El juego termina cuando el segundo jugador adivina el número o se queda sin intentos. 
     Registra el número de intentos necesarios para adivinar el número y el número de veces
     que cada jugador ha ganado.
-    */
-    
+     */
     public static void main(String[] args) {
-       
-        Juego j1 = new Juego();
-        
-        j1.iniciarJuego();
+        Scanner leer = new Scanner(System.in);
+        String opcion;
+        do {
+            Juego j1 = new Juego();
+             j1.iniciarJuego();
+            System.out.println("desea seguir jugando? (s/n)");
+            opcion = leer.next();
+        } while ("S".equalsIgnoreCase(opcion));
+        System.out.println("Saliendo del Juego. Gracias por Jugar");
+
     }
-    
 }

@@ -1,16 +1,16 @@
 
-package ejercicio1.Libreria;
+package entidades;
 
-public class Entidades {
+public class Libro {
     private String isbn;
     private String titulo;
     private String autor;
     private int numPags;
 
-    public Entidades() {
+    public Libro() {
     }
 
-    public Entidades(String isbn, String titulo, String autor, int numPags) {
+    public Libro(String isbn, String titulo, String autor, int numPags) {
         if(isbn.length() ==13){
         this.isbn = isbn;
         }else{
@@ -56,6 +56,7 @@ public class Entidades {
    
  
     public void mostrarLibro(){
+        
         System.out.println("***********************");
         System.out.println("ISBN : " + this.isbn);
         System.out.println("Titulo : " + this.titulo);

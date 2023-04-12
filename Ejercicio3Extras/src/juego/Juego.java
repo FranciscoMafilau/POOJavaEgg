@@ -21,12 +21,12 @@ public class Juego {
     private int intentos;
     private int intentosNoAcertado;
     private int juegoGanado;
-    
+     private int conteoNumeros=5; ///contador de las veces que ingresa un numero jugador2
 
     public Juego() {
     }
 
-    public Juego(String jugador1, String jugador2, int num, int numAdivinar, int intentos, int intentosNoAcertado, int juegoGanado) {
+    public Juego(String jugador1, String jugador2, int num, int numAdivinar, int intentos, int intentosNoAcertado, int juegoGanado, int conteoNumeros) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
         this.num = num;
@@ -34,6 +34,7 @@ public class Juego {
         this.intentos = intentos;
         this.intentosNoAcertado = intentosNoAcertado;
         this.juegoGanado = juegoGanado;
+        this.conteoNumeros=5;
     }
 
  
@@ -46,7 +47,7 @@ public class Juego {
         System.out.println(jugador1+ " Introduca un número a adivinar: ");
         numAdivinar = leer.nextInt();
         
-        int conteoNumeros=5; ///contador de las veces que ingresa un numero jugador2
+       
         boolean correcto =false;
         intentos=0;
         while(conteoNumeros>0 && !correcto){
@@ -80,3 +81,67 @@ public class Juego {
 }  
 }
 
+/*
+private int victoriasJugador1, victoriasJugador2, limiteIntentos;
+
+    public Juego() {
+        victoriasJugador1 = 0;
+        victoriasJugador2 = 0;
+        limiteIntentos = 5;
+    }
+
+    public int getVictoriasJugador1() {
+        return victoriasJugador1;
+    }
+
+    public int getVictoriasJugador2() {
+        return victoriasJugador2;
+    }
+
+    public int getLimiteIntentos() {
+        return limiteIntentos;
+    }
+
+    public void setLimiteIntentos(int limiteIntentos) {
+        this.limiteIntentos = limiteIntentos;
+    }
+    
+    public void iniciar_juego(int numeroJugador1, Scanner sc){
+        int numeroJugador2;
+        int contadorIntento = 0;
+        boolean bandera = false;
+        do {            
+            System.out.println("Jugador 2 ingrese un número");
+            numeroJugador2 = sc.nextInt();
+            if(numeroJugador1 < numeroJugador2){
+                System.out.println("Es más bajo");
+            } else if(numeroJugador1 > numeroJugador2){
+                System.out.println("Es más alto");
+            } else {
+                bandera = true;
+            }
+            contadorIntento++;
+        } while (numeroJugador1 != numeroJugador2 && contadorIntento < limiteIntentos);
+        
+        if(bandera){
+            System.out.println("El jugador 2 adivinó el número");
+            victoriasJugador2++;
+        } else {
+            System.out.println("El jugador 2  no adivinó el número, gana el jugador 1");
+            victoriasJugador1++;
+        }
+    }
+
+
+
+
+
+Scanner sc = new Scanner(System.in);
+        Juego nuevo = new Juego();
+        do {            
+            System.out.println("Jugador 1 ingrese el número a adivinar");
+            int num = sc.nextInt();
+            nuevo.iniciar_juego(num, sc);
+            
+        } while (true);
+*/
